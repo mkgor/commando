@@ -21,9 +21,7 @@ class StandardCommandBus extends AbstractBus implements BusInterface
      */
     public function __construct(array $handlers)
     {
-        foreach($handlers as $command => $handler) {
-            $this->getCommandContainer()->setHandler($command, $handler);
-        }
+        $this->getCommandContainer()->setContainer($handlers);
     }
 
     /**
