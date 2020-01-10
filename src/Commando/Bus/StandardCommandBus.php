@@ -12,8 +12,10 @@ use ReflectionException;
  *
  * @package Bus
  */
-class StandardCommandBus extends AbstractBus implements BusInterface
+class StandardCommandBus implements BusInterface
 {
+    use BusTrait;
+
     /**
      * CommandBus constructor.
      *
