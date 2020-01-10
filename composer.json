@@ -1,0 +1,27 @@
+{
+    "name": "pixaye/commando",
+    "description": "Command pattern implementation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gor Mkhitaryan",
+            "email": "mkhitaryan.gor@inbox.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Commando\\": "src/Commando/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
