@@ -41,7 +41,7 @@ $bus = new \Commando\Bus\StandardCommandBus([
 ]);
 
 //For example, we want to register new user
-$registeredUser = $bus->dispatch(new Commands\RegisterNewUserCommand('John', 'Doe'));
+$registeredUser = $bus->dispatch(new Commands\RegisterNewUserCommand('John Doe', '1234567890'));
 ````
 
 Command is a simple PHP class, which can contain some properties which handler should use to do some action.
@@ -55,24 +55,24 @@ use Commando\Command\CommandInterface;
 
 class RegisterNewUserCommand implements CommandInterface
 {
-    private $userId;
+    private $fullName;
     
     private $password;
 
     /**
      * @return mixed
      */
-    public function getUserId()
+    public function getFullName()
     {
-        return $this->userId;
+        return $this->fullName;
     }
 
     /**
-     * @param mixed $userId
+     * @param mixed $fullName
      */
-    public function setUserId($userId)
+    public function setFullName($fullName)
     {
-        $this->userId = $userId;
+        $this->fullName = $fullName;
     }
 
     /**
@@ -112,7 +112,7 @@ class RegisterNewUserCommandHandler implements HandlerInterface
      */
     public function handle($command)
     {
-        return 'User with id = ' . $command->getUserId() . ' and password = ' . $command->getPassword() . ' has been created';
+        return 'User with name  ' . $command->getFullName() . ' and password = ' . $command->getPassword() . ' has been created';
     }
 }
 ````
