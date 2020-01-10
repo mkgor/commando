@@ -6,10 +6,10 @@ use Commando\Container\HandlerContainer;
 use Commando\Container\ContainerInterface;
 
 /**
- * Class AbstractBus
+ * Trait BusTrait
  * @package Bus
  */
-abstract class AbstractBus
+trait BusTrait
 {
     /**
      * @var HandlerContainer
